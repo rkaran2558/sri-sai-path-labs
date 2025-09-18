@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sai Path Labs - Advanced Diagnostic Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        
+        /* Animated Background Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            mix-blend-mode: multiply;
+            animation: blob 7s infinite;
+        }
+        
+        .blob:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            animation-delay: 0s;
+        }
+        
+        .blob:nth-child(2) {
+            top: 50%;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            animation-delay: 2s;
+        }
+        
+        .blob:nth-child(3) {
+            bottom: 0;
+            left: 20%;
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            animation-delay: 4s;
+        }
+        
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            background: #667eea;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Premium hover effects */
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+        
+        /* Pulse animation for CTA buttons */
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+    <!-- Animated Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+
+    <!-- Header with Glassmorphism -->
+    <header class="glass fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-xl">
+                        <i class="fas fa-hospital text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold gradient-text">Sri Sai Path Labs</h1>
+                        <p class="text-xs text-gray-600">ISO 15189:2022 | NABL Accredited | CAP Certified</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300">Services</a>
+                    <a href="#technology" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300">Technology</a>
+                    <a href="#tests" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300">Tests</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300">Reviews</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300">Contact</a>
+                    <a href="tel:+919876543210" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-phone mr-2"></i>Book Now
+                    </a>
+                </nav>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Advanced Animations -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-8" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-award mr-2"></i>India's Most Trusted Diagnostic Center
+                    </span>
+                    <h2 class="text-6xl md:text-7xl font-extrabold mb-8 leading-tight">
+                        <span class="gradient-text">Advanced Diagnostic</span><br>
+                        <span class="text-gray-800">Excellence Since 1998</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+                        Experience world-class pathology services with AI-powered diagnostics, 
+                        99.9% accuracy rate, and instant digital reports. Your health, our precision.
+                    </p>
+                </div>
+                
+                <!-- Enhanced Stats with animations -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="glass p-8 rounded-2xl hover-lift text-center">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-award text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-gray-800 mb-2">26+</div>
+                        <div class="text-gray-600 font-medium">Years Excellence</div>
+                    </div>
+                    <div class="glass p-8 rounded-2xl hover-lift text-center">
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-gray-800 mb-2">2M+</div>
+                        <div class="text-gray-600 font-medium">Happy Patients</div>
+                    </div>
+                    <div class="glass p-8 rounded-2xl hover-lift text-center">
+                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-microscope text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-gray-800 mb-2">99.9%</div>
+                        <div class="text-gray-600 font-medium">Accuracy Rate</div>
+                    </div>
+                    <div class="glass p-8 rounded-2xl hover-lift text-center">
+                        <div class="bg-gradient-to-r from-red-500 to-red-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bolt text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-gray-800 mb-2">2-6 Hrs</div>
+                        <div class="text-gray-600 font-medium">Report Time</div>
+                    </div>
+                </div>
+
+                <!-- Premium CTA Buttons -->
+                <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <a href="tel:+919876543210" class="group block md:inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 pulse-glow">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-phone mr-3 group-hover:animate-bounce"></i>
+                            <div>
+                                <div>Emergency Booking</div>
+                                <div class="text-sm font-normal opacity-90">+91 98765 43210</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/919876543210" class="group block md:inline-block bg-gradient-to-r from-green-600 to-green-700 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                        <div class="flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-3 group-hover:animate-pulse"></i>
+                            <div>
+                                <div>WhatsApp Booking</div>
+                                <div class="text-sm font-normal opacity-90">Instant Response</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold mb-6">
+                    <span class="gradient-text">Cutting-Edge</span> Technology
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our state-of-the-art laboratory is equipped with the world's most advanced diagnostic equipment and AI-powered analysis systems.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI-Powered Analysis</h3>
+                    <p class="text-gray-600 mb-6">Advanced machine learning algorithms ensure 99.9% accuracy in test results with intelligent anomaly detection.</p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Automated result validation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Pattern recognition technology</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Predictive health analytics</li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-microscope text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Advanced Equipment</h3>
+                    <p class="text-gray-600 mb-6">Latest generation analyzers from leading manufacturers ensure precise and reliable test results.</p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Roche Cobas analyzers</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Siemens ADVIA systems</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>BD FACS flow cytometers</li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Quality Assurance</h3>
+                    <p class="text-gray-600 mb-6">Multi-layer quality control systems with international standard compliance and continuous monitoring.</p>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>ISO 15189:2022 certified</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>NABL accredited processes</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>CAP proficiency testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Section -->
+    <section id="services" class="py-20 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold mb-6">Why Choose <span class="gradient-text">Sri Sai Path Labs</span>?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience healthcare excellence with our comprehensive diagnostic services, advanced technology, and personalized patient care.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group p-8 rounded-3xl border border-gray-100 hover:border-blue-200 hover:shadow-2xl transition-all duration-500 hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Premium Home Collection</h3>
+                    <p class="text-gray-600 mb-6">Certified phlebotomists equipped with advanced collection kits visit your doorstep with strict hygiene protocols.</p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Free home visits within city limits</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Same-day collection available</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>COVID-safe protocols followed</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Temperature-controlled transport</div>
+                    </div>
+                </div>
+
+                <div class="group p-8 rounded-3xl border border-gray-100 hover:border-green-200 hover:shadow-2xl transition-all duration-500 hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Digital Health Ecosystem</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive digital platform with instant reports, health trends, and personalized recommendations.</p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Instant WhatsApp & Email reports</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Mobile app with health tracking</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Historical report comparison</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Doctor consultation integration</div>
+                    </div>
+                </div>
+
+                <div class="group p-8 rounded-3xl border border-gray-100 hover:border-purple-200 hover:shadow-2xl transition-all duration-500 hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-r from-purple-500 to-purple-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-md text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Expert Medical Team</h3>
+                    <p class="text-gray-600 mb-6">Board-certified pathologists and experienced technicians with specialized training in advanced diagnostics.</p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>MD Pathology consultants</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Specialized molecular diagnostics</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Second opinion consultations</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Continuous medical education</div>
+                    </div>
+                </div>
+
+                <div class="group p-8 rounded-3xl border border-gray-100 hover:border-red-200 hover:shadow-2xl transition-all duration-500 hover-lift" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gradient-to-r from-red-500 to-red-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">International Accreditations</h3>
+                    <p class="text-gray-600 mb-6">Multiple international certifications ensuring world-class quality standards and reliability.</p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>ISO 15189:2022 Medical Labs</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>NABL accredited facility</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>CAP proficiency program</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>WHO-GMP compliance</div>
+                    </div>
+                </div>
+
+                <div class="group p-8 rounded-3xl border border-gray-100 hover:border-yellow-200 hover:shadow-2xl transition-all duration-500 hover-lift" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Lightning Fast Results</h3>
+                    <p class="text-gray-600 mb-6">Advanced automation and streamlined processes deliver accurate results in record time.</p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>2-6 hours for routine tests</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Emergency reports in 1 hour</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Real-time processing updates</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>24/7 critical result alerts</div>
+                    </div>
+                </div>
+
+                <div class="group p-8 rounded-3xl border border-gray-100 hover:border-indigo-200 hover:shadow-2xl transition-all duration-500 hover-lift" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-rupee-sign text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Transparent Pricing</h3>
+                    <p class="text-gray-600 mb-6">Competitive rates with comprehensive health packages and flexible payment options.</p>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>No hidden charges policy</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Insurance direct billing</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>Corporate health packages</div>
+                        <div><i class="fas fa-check text-green-500 mr-2"></i>EMI payment options</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Test Packages -->
+    <section id="tests" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold mb-6">Premium <span class="gradient-text">Health Packages</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive diagnostic solutions tailored for your specific health needs with advanced biomarkers and AI-powered insights.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Essential Package -->
+                <div class="glass rounded-3xl p-8 hover-lift relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 bg-gradient-to-l from-blue-500 to-transparent w-32 h-32 rounded-bl-full opacity-20"></div>
+                    <div class="relative z-10">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">MOST POPULAR</span>
+                        <h3 class="text-2xl font-bold mb-3">Essential Health Check</h3>
+                        <p class="text-gray-600 mb-6">Complete blood analysis with advanced cardiac and diabetes markers for early detection.</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-baseline mb-2">
+                                <span class="text-4xl font-bold text-blue-600">₹899</span>
+                                <span class="text-xl text-gray-500 line-through ml-2">₹1,499</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-bold px-2 py-1 rounded ml-2">40% OFF</span>
+                            </div>
+                            <div class="text-sm text-gray-500">Includes home collection</div>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Complete Blood Count (25 parameters)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Lipid Profile (HDL, LDL, Triglycerides)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Diabetes Panel (HbA1c, Glucose)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Kidney & Liver Function Tests</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Thyroid Profile (TSH, T3, T4)</span>
+                            </div>
+                        </div>
+
+                        <a href="tel:+919876543210" class="block w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-semibold">
+                            Book Now - 2 Hours Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Comprehensive Package -->
+                <div class="glass rounded-3xl p-8 hover-lift relative overflow-hidden border-2 border-purple-200" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 bg-gradient-to-l from-purple-500 to-transparent w-32 h-32 rounded-bl-full opacity-20"></div>
+                    <div class="relative z-10">
+                        <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">RECOMMENDED</span>
+                        <h3 class="text-2xl font-bold mb-3">Comprehensive Wellness</h3>
+                        <p class="text-gray-600 mb-6">Advanced screening with tumor markers, vitamin levels, and specialized cardiac risk assessment.</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-baseline mb-2">
+                                <span class="text-4xl font-bold text-purple-600">₹1,899</span>
+                                <span class="text-xl text-gray-500 line-through ml-2">₹3,200</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-bold px-2 py-1 rounded ml-2">41% OFF</span>
+                            </div>
+                            <div class="text-sm text-gray-500">Free home collection + Doctor consultation</div>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">All Essential package tests</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Cancer Screening (PSA, CA 125, CEA)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Vitamin Profile (B12, D3, Folate)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Advanced Cardiac Markers</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Hormone Panel (Testosterone/Estrogen)</span>
+                            </div>
+                        </div>
+
+                        <a href="tel:+919876543210" class="block w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white text-center py-4 rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-semibold">
+                            Book Now - 4 Hours Report
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive Package -->
+                <div class="glass rounded-3xl p-8 hover-lift relative overflow-hidden border-2 border-gold-200" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute top-0 right-0 bg-gradient-to-l from-yellow-500 to-transparent w-32 h-32 rounded-bl-full opacity-20"></div>
+                    <div class="relative z-10">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">EXECUTIVE</span>
+                        <h3 class="text-2xl font-bold mb-3">Executive Health Screening</h3>
+                        <p class="text-gray-600 mb-6">Premium package with genetic markers, advanced imaging consultations, and personalized health report.</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-baseline mb-2">
+                                <span class="text-4xl font-bold text-yellow-600">₹4,999</span>
+                                <span class="text-xl text-gray-500 line-through ml-2">₹8,500</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-bold px-2 py-1 rounded ml-2">41% OFF</span>
+                            </div>
+                            <div class="text-sm text-gray-500">Premium home collection + Specialist consultation</div>
+                        </div>
+
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">All Comprehensive package tests</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Genetic Risk Assessment</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Advanced Allergy Panel</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">Personalized Health Report</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-sm">3 Months Health Monitoring</span>
+                            </div>
+                        </div>
+
+                        <a href="tel:+919876543210" class="block w-full bg-gradient-to-r from-yellow-600 to-yellow-700 text-white text-center py-4 rounded-2xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-semibold">
+                            Book Now - 6 Hours Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="tel:+919876543210" class="bg-gradient-to-r from-green-600 to-green-700 text-white px-12 py-4 rounded-2xl text-lg font-bold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-block">
+                    <i class="fas fa-list mr-3"></i>View All 500+ Tests & Packages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold mb-6">What Our <span class="gradient-text">Patients Say</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Real experiences from thousands of satisfied patients who trust us with their health.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            RP
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Rajesh Patel</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Exceptional service! Home collection was punctual, staff was professional, and I received my detailed report within 3 hours. The digital platform is amazing for tracking health trends."</p>
+                    <div class="text-sm text-gray-500">Executive Health Package - March 2025</div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            MS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Dr. Meera Sharma</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"As a physician, I appreciate their accuracy and detailed reporting. The AI-powered insights are impressive, and their quality standards match international labs. Highly recommend!"</p>
+                    <div class="text-sm text-gray-500">Comprehensive Wellness - February 2025</div>
+                </div>
+
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            AK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Anita Kumar</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"Outstanding experience during my pregnancy monitoring. The phlebotomist was gentle and caring, reports came instantly on WhatsApp, and the doctor consultation was very helpful."</p>
+                    <div class="text-sm text-gray-500">Essential Health Check - January 2025</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+                <div class="inline-flex items-center bg-gradient-to-r from-green-100 to-blue-100 px-8 py-4 rounded-2xl">
+                    <div class="flex text-yellow-400 text-2xl mr-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-gray-800">4.9/5 Rating</div>
+                        <div class="text-sm text-gray-600">Based on 15,000+ Google Reviews</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Enhanced Design -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-black opacity-20"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold mb-6">Ready to Prioritize Your Health?</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Book your comprehensive health screening today and take the first step towards a healthier tomorrow.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-white bg-opacity-20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">24/7 Booking Helpline</h3>
+                    <a href="tel:+919876543210" class="text-2xl font-bold hover:underline">+91 98765 43210</a>
+                    <p class="mt-2 opacity-80">Instant booking & emergency services</p>
+                    <div class="mt-4">
+                        <a href="tel:+919876543210" class="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 inline-block">
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white bg-opacity-20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fab fa-whatsapp text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">WhatsApp Booking</h3>
+                    <a href="https://wa.me/919876543210" class="text-2xl font-bold hover:underline">+91 98765 43210</a>
+                    <p class="mt-2 opacity-80">Quick booking & instant reports</p>
+                    <div class="mt-4">
+                        <a href="https://wa.me/919876543210" class="bg-green-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-green-600 transition-all duration-300 inline-block">
+                            WhatsApp Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="glass p-8 rounded-3xl hover-lift" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white bg-opacity-20 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Visit Our Advanced Lab</h3>
+                    <p class="text-lg font-semibold">123 Medical Excellence Street</p>
+                    <p class="opacity-80">Health City, Karnataka 560001</p>
+                    <div class="mt-4">
+                        <a href="#" class="bg-white bg-opacity-20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:bg-opacity-30 transition-all duration-300 inline-block">
+                            Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Emergency Banner -->
+            <div class="glass p-8 rounded-3xl text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="mb-6">
+                    <h3 class="text-3xl font-bold mb-4">Emergency? We're Here 24/7</h3>
+                    <p class="text-lg opacity-90 mb-8">Critical health situations require immediate attention. Our emergency diagnostic services are available round the clock.</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="tel:+919876543210" class="bg-red-600 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-red-700 transform hover:scale-105 transition-all duration-300 pulse-glow">
+                        <i class="fas fa-ambulance mr-3"></i>Emergency Collection
+                    </a>
+                    <a href="https://wa.me/919876543210" class="bg-white text-blue-600 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-3"></i>Quick WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-3 rounded-xl">
+                        <i class="fas fa-hospital text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold gradient-text">Sri Sai Path Labs</h3>
+                        <p class="text-gray-400">Advanced Diagnostic Excellence Since 1998</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-blue-400">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#technology" class="hover:text-white transition-colors">Technology</a></li>
+                        <li><a href="#tests" class="hover:text-white transition-colors">Health Packages</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-green-400">Premium Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>AI-Powered Diagnostics</li>
+                        <li>Home Sample Collection</li>
+                        <li>Digital Health Reports</li>
+                        <li>Corporate Health Programs</li>
+                        <li>Executive Health Screening</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-purple-400">Certifications</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-certificate mr-2"></i>ISO 15189:2022 Medical Labs</li>
+                        <li><i class="fas fa-certificate mr-2"></i>NABL Accredited Facility</li>
+                        <li><i class="fas fa-certificate mr-2"></i>CAP Proficiency Program</li>
+                        <li><i class="fas fa-certificate mr-2"></i>WHO-GMP Compliant</li>
+                        <li><i class="fas fa-certificate mr-2"></i>ICMR Guidelines Certified</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-yellow-400">Connect With Us</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@srisaipathlabs.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe mr-3"></i>
+                            <span>www.srisaipathlabs.com</span>
+                        </div>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-2xl hover:text-blue-400 transition-colors"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-2xl hover:text-blue-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-2xl hover:text-pink-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-2xl hover:text-blue-600 transition-colors"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 mb-4">
+                    &copy; 2025 Sri Sai Path Labs. All rights reserved. | 
+                    <a href="#" class="hover:text-white">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </p>
+                <p class="text-sm text-gray-500">
+                    Trusted by over 2 million patients across India. Your health data is secure and confidential.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <div class="flex flex-col space-y-4">
+            <a href="https://wa.me/919876543210" class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transform hover:scale-110 transition-all duration-300">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a href="tel:+919876543210" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transform hover:scale-110 transition-all duration-300">
+                <i class="fas fa-phone text-2xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Floating particles animation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.width = particle.style.height = Math.random() * 10 + 5 + 'px';
+            particle.style.animationDuration = Math.random() * 3 + 2 + 's';
+            particle.style.opacity = Math.random() * 0.3 + 0.1;
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+
+        // Add scroll reveal animations
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+            }
+        });
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            console.log('Sri Sai Path Labs website loaded successfully');
+            
+            // Track page load time
+            const loadTime = performance.now();
+            if (loadTime > 3000) {
+                console.warn('Page load time:', loadTime + 'ms - Consider optimization');
+            }
+        });
+    </script>
+</body>
+</html>
